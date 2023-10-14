@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Certificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Nombre del Certificado</ion-label>
+      <ion-input [(ngModel)]="nombreCertificado"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Fecha de Obtención</ion-label>
+      <ion-input type="date" [(ngModel)]="fechaObtencion"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>¿El certificado tiene vencimiento?</ion-label>
+      <ion-checkbox [(ngModel)]="tieneVencimiento"></ion-checkbox>
+    </ion-item>
+
+    <ion-item *ngIf="tieneVencimiento">
+      <ion-label position="stacked">Fecha de Vencimiento</ion-label>
+      <ion-input type="date" [(ngModel)]="fechaVencimiento"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

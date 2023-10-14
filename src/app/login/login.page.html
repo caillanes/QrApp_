@@ -1,0 +1,31 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <h1>
+    SkeletonApp 
+  </h1>
+
+  <h6>
+    Todo comenzo aqu&iacute;
+  </h6>
+
+    <div id="loginUsuario">
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input [(ngModel)]="username" maxlength="8" minlength="3" clearInput></ion-input>
+      </ion-item>
+    </div>
+
+    <div id="loginContrasena">
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [(ngModel)]="password" type="password" maxlength="4" minlength="4" clearInput></ion-input>
+      </ion-item>
+    </div>  
+
+    <div id="botonesLogin">
+      <button mat-raised-button color="primary" (click)="login()">Ingresar</button>
+    </div>
+</ion-content>
+

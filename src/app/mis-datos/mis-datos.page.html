@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SkeletonApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="user">
+    <ion-label>Usuario: {{ user }}</ion-label>
+  </div>
+
+  <div style="padding-left: 10px; padding-right: 30px;">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input id="nombreInput" [(ngModel)]="nombre" clearInput [@inputAnimation]="inputState"></ion-input>
+    </ion-item>
+  </div>
+
+  <div id="campoApellido">
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input id="apellidoInput" [(ngModel)]="apellido" clearInput [@inputAnimation]="inputState"></ion-input>
+    </ion-item>
+  </div>
+
+  <div id="campoEducacion">
+    <ion-item>
+      <ion-label>Nivel de Educación</ion-label>
+      <ion-select [(ngModel)]="nivelEducacion">
+        <ion-select-option value="primaria">Primaria</ion-select-option>
+        <ion-select-option value="secundaria">Secundaria</ion-select-option>
+        <ion-select-option value="universidad">Universidad</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div id="campoFecha">
+    <mat-form-field>
+      <mat-label>Fecha Nacimiento</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="fechaNacimiento" name="fechaNacimiento">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  
+
+  <div style="text-align: center; padding-top: 10px;">
+    <ion-col>
+      <button mat-raised-button color="primary" (click)="limpiar()">Limpiar</button>
+    </ion-col>
+    <ion-col>
+      <button mat-raised-button color="primary" (click)="mostrarInformacion()">Mostrar</button>
+    </ion-col>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Desarrollado por Carlos</ion-title>
+  </ion-toolbar>
+</ion-footer>

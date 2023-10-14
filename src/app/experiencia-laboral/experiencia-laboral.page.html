@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Experiencia Laboral</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Empresa</ion-label>
+      <ion-input [(ngModel)]="empresa"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Año de inicio</ion-label>
+      <ion-input type="number" [(ngModel)]="anoInicio"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>¿Trabaja actualmente aquí?</ion-label>
+      <ion-checkbox [(ngModel)]="trabajaActualmente"></ion-checkbox>
+    </ion-item>
+
+    <ion-item *ngIf="!trabajaActualmente">
+      <ion-label position="stacked">Año de término</ion-label>
+      <ion-input type="number" [(ngModel)]="anoTermino"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Cargo</ion-label>
+      <ion-input [(ngModel)]="cargo"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

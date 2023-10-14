@@ -1,0 +1,66 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+  ion-content {
+    ion-item {
+      margin-bottom: 16px;
+    }
+  
+    ion-button {
+      margin-top: 16px;
+    }
+  }
+  
+  ion-title {
+    text-align: center;
+  }
+  
+  #campoFecha{
+    padding-left: 10px; 
+    text-align: center; 
+    padding-top: 15px;
+  }
+  
+  #campoEducacion{
+    padding-right: 30px; 
+    padding-left: 10px; 
+    padding-top: 5px;
+  }
+  
+  #campoApellido{
+    padding-left: 10px; 
+    padding-right: 30px;
+  }
+  
+  #user{
+    padding-left: 25px; 
+    padding-top: 15px; 
+    padding-bottom: 20px;
+  }
