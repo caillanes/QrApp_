@@ -8,18 +8,17 @@ import { of } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://192.168.1.83:3000';
+  private apiUrl = 'http://192.168.72.1:3000';
   public isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
   private username: string | null = localStorage.getItem('username');
 
   constructor(private http: HttpClient) {}
 
-  // Nuevo método para verificar el nombre de usuario en la base de datos
   checkUsername(username: string): Observable<boolean> {
     // Realiza una solicitud HTTP GET a la URL de usuarios para verificar el nombre de usuario.
     return this.http.get<any[]>(`${this.apiUrl}/users`).pipe(
       map((users: any[]) => {
-        // Comprueba si el nombre de usuario existe en la lista de usuarios.
+        // Nombre de usuario existe en la lista de users.
         return users.some(user => user.username === username);
       })
     );
@@ -31,7 +30,7 @@ export class AuthService {
     this.checkUsername(username).subscribe((exists) => {
       if (exists && /^\d{4}$/.test(password)) {
         console.log('Autenticación exitosa');
-        // Almacena la información en el servicio y en el Local Storage.
+        // Almacena la información en el servicio y en el local storagea.
         this.isAuthenticated = true;
         this.username = username;
         localStorage.setItem('isAuthenticated', 'true');
@@ -42,8 +41,7 @@ export class AuthService {
         return false;
       }
     });
-  
-    // Devuelve un Observable aquí (puede ser de `of(false)` en caso de error).
+
     return of(false);
   }
   

@@ -16,25 +16,26 @@
   <div id="container">
     <strong>Bienvenido a tu página de inicio</strong>
     <p>Selecciona una opción:</p>
+    <div>
+      <div id="botonesLogin">
+        <button mat-raised-button color="primary" (click)="navigateToExperience()">
+          Experiencia Laboral</button>
+      </div>
 
-    <!-- Botón para navegar a "Certificaciones" -->
-    <ion-button expand="full" (click)="navigateToCertifications()">
-      Certificaciones
-    </ion-button>
+      <div id="botonesLogin">
+        <button mat-raised-button color="primary" (click)="navigateToCertifications()">
+          Certificaciones</button>
+      </div>
 
-    <!-- Botón para navegar a "Experiencia Laboral" -->
-    <ion-button expand="full" (click)="navigateToExperience()">
-      Experiencia Laboral
-    </ion-button>
+      <div id="botonesLogin">
+        <button mat-raised-button color="primary" (click)="navigateToMyData()">
+          Mis Datos </button>
+      </div>
 
-    <!-- Botón para navegar a "Mis Datos" -->
-    <ion-button expand="full" (click)="navigateToMyData()">
-      Mis Datos
-    </ion-button>
-
-    <!-- Botón para cerrar sesión (debes implementar esta función en tu servicio de autenticación) -->
-    <ion-button expand="full" (click)="logout()">
-      Cerrar Sesión
-    </ion-button>
+      <div id="botonesLogin">
+        <button mat-raised-button color="primary" (click)="logout()">
+          Cerrar Sesión </button>
+      </div>
+    </div>
   </div>
 </ion-content>
