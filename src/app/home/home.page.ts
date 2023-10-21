@@ -7,26 +7,22 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(private router: Router) {}
-
-  navigateToCertifications() {
-    this.router.navigate(['/certificaciones']);
+  user: string = '';
+  nombre: string = '';
+  apellido: string = '';
+  nivelEducacion: string = 'primaria';
+  fechaNacimiento: string = '';
+  titleState: string = 'center';
+  inputState: string = '';
+  
+  constructor(private router: Router) {
   }
 
-  navigateToExperience() {
-    this.router.navigate(['/experiencia-laboral']);
-  }
-
-  navigateToMyData() {
-    this.router.navigate(['/mis-datos']);
-  }
-
-  logout() {
-
-    localStorage.removeItem('isAuthenticated');
-    localStorage.removeItem('username');
-
+  redirigirALogin() {
     this.router.navigate(['/login']);
   }
   
+  redirigirALoginDocente() {
+    this.router.navigateByUrl('/login-docente');
+  }
 }

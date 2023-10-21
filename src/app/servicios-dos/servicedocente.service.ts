@@ -7,8 +7,9 @@ import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
-  private apiUrl = ''; //colocar ip + :3000
+export class ServicedocenteService {
+
+  private apiUrl = '';//colocar ip + :3000
   public isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
   private username: string | null = localStorage.getItem('username');
 
@@ -16,19 +17,19 @@ export class AuthService {
 
   checkUsername(username: string): Observable<boolean> {
     // Realiza una solicitud HTTP GET a la URL de usuarios para verificar el nombre de usuario.
-    return this.http.get<any[]>(`${this.apiUrl}/users`).pipe(
-      map((users: any[]) => {
+    return this.http.get<any[]>(`${this.apiUrl}/teachers`).pipe(
+      map((teachers: any[]) => {
         // Nombre de usuario existe en la lista de users.
-        return users.some(user => user.username === username);
+        return teachers.some(teachers => teachers.username === username);
       })
     );
   }
 
   checkPassword(username: string, password: string): Observable<boolean> {
-    return this.http.get<any[]>(`${this.apiUrl}/users`).pipe(
-      map((users: any[]) => {
+    return this.http.get<any[]>(`${this.apiUrl}/teachers`).pipe(
+      map((teachers: any[]) => {
         // Verificar si existe un usuario con el nombre de usuario y contraseña proporcionados.
-        return users.some(user => user.username === username && user.password === password);
+        return teachers.some(teachers => teachers.username === username && teachers.password === password);
       })
     );
   }

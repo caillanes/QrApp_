@@ -1,0 +1,32 @@
+.logo {
+    width: 150px;
+    height: auto; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+    margin: 10px;
+  }
+  
+  #imagen{
+    text-align: right;
+  }
+
+  #qrimagen{
+    text-align: right;
+  }
+
+  .centered-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: 0 auto;
+    height: 150px;
+  }
+  
+  
+  #botonesLogin{
+    text-align: center; 
+    padding-top: 50px; 
+    padding-bottom: 10px;
+}

@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="volverAtras()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div id="imagen">
+      <ion-img src="assets/DUOC.png" alt="Logo de la aplicación" class="logo"></ion-img>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="loginUsuario">  
+    <ion-item>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <ion-input [(ngModel)]="correo" type="email" disabled></ion-input>
+    </ion-item>
+  </div>
+
+  <div id="loginUsuario"> 
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="nombre" type="text" id="nombre-input"></ion-input>
+    </ion-item>
+  </div>
+  
+  <div id="loginUsuario"> 
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="contrasena" type="password" id="contrasena-input"></ion-input>
+    </ion-item>
+  </div>
+  
+  <div id="botonesLogindos" style="text-align: center;">
+    <button class="boton-accion" mat-raised-button style="background-color: #ffc845; color: white;" 
+    (click)="guardarDatos()">Guardar</button>
+  
+    <button class="boton-accion" mat-raised-button style="background-color: #ffc845; color: white;" 
+    (click)="limpiarCampos()">Cancelar</button>
+  </div>
+  <div id="botonesLogin">
+    <button class="boton-accion" mat-raised-button style="background-color: #ffc845; color: white;" (click)="mostrarInformacion()">Mostrar Información</button>
+  </div>
+</ion-content>

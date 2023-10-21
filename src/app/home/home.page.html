@@ -1,41 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
-    </ion-toolbar>
+<ion-header>
+  <div id="imagen">
+    <ion-img src="assets/DUOC.png" alt="Logo de la aplicación" class="logo"></ion-img>
+  </div>
   </ion-header>
 
-  <div id="container">
-    <strong>Bienvenido a tu página de inicio</strong>
-    <p>Selecciona una opción:</p>
-    <div>
-      <div id="botonesLogin">
-        <button mat-raised-button color="primary" (click)="navigateToExperience()">
-          Experiencia Laboral</button>
-      </div>
-
-      <div id="botonesLogin">
-        <button mat-raised-button color="primary" (click)="navigateToCertifications()">
-          Certificaciones</button>
-      </div>
-
-      <div id="botonesLogin">
-        <button mat-raised-button color="primary" (click)="navigateToMyData()">
-          Mis Datos </button>
-      </div>
-
-      <div id="botonesLogin">
-        <button mat-raised-button color="primary" (click)="logout()">
-          Cerrar Sesión </button>
-      </div>
+<ion-content [fullscreen]="true" class="background">
+  <div id="botones">
+    <div id="botonUno">
+      <button mat-raised-button style="background-color: #ffc845; color: #1D1D1D;"
+      (click)="redirigirALogin()">ALUMNO</button>
     </div>
+    <div id="botonDos">
+      <button mat-raised-button style="background-color: #ffc845; color: #1D1D1D;" (click)="redirigirALoginDocente()">DOCENTE</button>
+    </div>    
   </div>
 </ion-content>

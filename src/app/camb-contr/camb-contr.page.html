@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cambiar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="loginUsuario">  
+    <ion-item>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <ion-input type="email" required [(ngModel)]="email"></ion-input>
+    </ion-item>
+  </div>
+
+  <div id="botonesLogin">
+    <button mat-raised-button style="background-color: #ffc845; color: white;" 
+    (click)="enviar()">Enviar correo</button>
+  </div>
+</ion-content>
+
+

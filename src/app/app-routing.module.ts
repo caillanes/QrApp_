@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './servicios/auth.guard';
+import { GuardDocenteGuard } from './servicios-dos/guard-docente.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
-    canActivate: [AuthGuard]
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -14,23 +14,31 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'mis-datos',
-    loadChildren: () => import('./mis-datos/mis-datos.module').then( m => m.MisDatosPageModule),
+    path: 'qr-scanner',
+    loadChildren: () => import('./qr-scanner/qr-scanner.module').then( m => m.QrScannerPageModule),
     canActivate: [AuthGuard]
   },
   {
-    path: 'experiencia-laboral',
-    loadChildren: () => import('./experiencia-laboral/experiencia-laboral.module').then( m => m.ExperienciaLaboralPageModule),
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'certificaciones',
-    loadChildren: () => import('./certificaciones/certificaciones.module').then( m => m.CertificacionesPageModule),
-    canActivate: [AuthGuard]
+    path: 'qr-generator',
+    loadChildren: () => import('./qr-generator/qr-generator.module').then( m => m.QrGeneratorPageModule),
+    canActivate: [GuardDocenteGuard]
   },
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'login-docente',
+    loadChildren: () => import('./login-docente/login-docente.module').then( m => m.LoginDocentePageModule)
+  },
+  {
+    path: 'camb-contr',
+    loadChildren: () => import('./camb-contr/camb-contr.module').then( m => m.CambContrPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule),
+    canActivate: [GuardDocenteGuard, AuthGuard]
   },
   {
     path: 'not-found',

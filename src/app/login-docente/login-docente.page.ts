@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../servicios/auth.service';
+import { ServicedocenteService } from '../servicios-dos/servicedocente.service';
 import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: 'login.page.html',
-  styleUrls: ['login.page.scss'],
+  selector: 'app-login-docente',
+  templateUrl: 'login-docente.page.html',
+  styleUrls: ['login-docente.page.scss'],
 })
-export class LoginPage {
+export class LoginDocentePage {
   username: string = '';
   password: string = '';
 
   constructor(
     private router: Router,
-    private authService: AuthService,
+    private serviceDocente: ServicedocenteService,
     private alertController: AlertController
   ) {}
 
@@ -29,10 +29,10 @@ export class LoginPage {
       return;
     }
 
-    this.authService.login(this.username, this.password).subscribe(async (loginSuccessful) => {
+    this.serviceDocente.login(this.username, this.password).subscribe(async (loginSuccessful: boolean) => {
       if (loginSuccessful) {
         console.log('Inicio de sesión exitoso');
-        this.router.navigate(['/qr-scanner']);
+        this.router.navigate(['/qr-generator']);
       } else {
         const alert = await this.alertController.create({
           header: 'Error',

@@ -1,33 +1,37 @@
-#container {
+
+#botones {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh;
+}
+
+#botonUno{
+  padding-bottom: 20px;
+}
+
+button{
+  width: 200px;
+}
+
+.background{
+  --ion-background-color: #1D1D1D;
+}
+
+.logo {
+  width: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+#imagen{
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-header{
+  background-color: #666666;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-#botonesLogin{
-  text-align: center; 
-  padding-top: 5px; 
-  padding-bottom: 5px;
-}
