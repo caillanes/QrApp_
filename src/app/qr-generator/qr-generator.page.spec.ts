@@ -5,7 +5,7 @@ describe('QrGeneratorPage', () => {
   let component: QrGeneratorPage;
   let fixture: ComponentFixture<QrGeneratorPage>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     fixture = TestBed.createComponent(QrGeneratorPage);
     component = fixture.componentInstance;
     fixture.detectChanges();

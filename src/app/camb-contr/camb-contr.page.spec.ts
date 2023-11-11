@@ -5,7 +5,7 @@ describe('CambContrPage', () => {
   let component: CambContrPage;
   let fixture: ComponentFixture<CambContrPage>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     fixture = TestBed.createComponent(CambContrPage);
     component = fixture.componentInstance;
     fixture.detectChanges();

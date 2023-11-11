@@ -20,7 +20,8 @@ export class QrGeneratorPage implements OnInit {
   ngAfterViewInit() {
     const card = this.animationCtrl
       .create()
-      .addElement(this.cardElements.get(0)!.nativeElement) // Utilizamos "!" para indicar que cardElements.get(0) no será nulo
+      .addElement(
+        this.cardElements.get(0)!.nativeElement)
       .duration(2000)
       .beforeStyles({
         filter: 'invert(75%)',
