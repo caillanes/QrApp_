@@ -9,7 +9,7 @@ import { of } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://192.168.72.1:3000'; //colocar ip + :3000
+  private apiUrl = 'https://fake-api-sage.vercel.app'; //colocar ip + :3000
 
   constructor(private http: HttpClient) {}
 

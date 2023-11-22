@@ -9,7 +9,7 @@ import { of } from 'rxjs';
 })
 export class ServicedocenteService {
 
-  private apiUrl = 'http://192.168.1.83:3000';//colocar ip + :3000
+  private apiUrl = 'https://fake-api-sage.vercel.app';//colocar ip + :3000
   public isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
   private username: string | null = localStorage.getItem('username');
 

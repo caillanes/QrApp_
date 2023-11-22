@@ -4,7 +4,9 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "scripts": { "test": "jasmine" },
+    "scripts": {
+      "test": "jasmine"
+    },
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -24,7 +26,12 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
-    "@capacitor/core": "5.5.0",
+    "@capacitor/android": "5.5.1",
+    "@capacitor/app": "5.0.6",
+    "@capacitor/core": "5.5.1",
+    "@capacitor/haptics": "5.0.6",
+    "@capacitor/keyboard": "5.0.6",
+    "@capacitor/status-bar": "5.0.6",
     "@ionic/angular": "^7.0.0",
     "@ionic/storage": "^4.0.0",
     "ionicons": "^7.0.0",
@@ -42,6 +49,7 @@
     "@angular/cli": "16.2.6",
     "@angular/compiler-cli": "^16.0.0",
     "@angular/language-service": "^16.0.0",
+    "@capacitor/cli": "5.5.1",
     "@ionic/angular-toolkit": "^9.0.0",
     "@types/jasmine": "~4.3.0",
     "@types/node": "^12.11.1",
@@ -61,5 +69,13 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "ts-node": "^8.3.0",
     "typescript": "~5.0.2"
-  }
+  },
+  "browserslist": [
+    "Chrome >=79",
+    "ChromeAndroid >=79",
+    "Firefox >=70",
+    "Edge >=79",
+    "Safari >=14",
+    "iOS >=14"
+  ]
 }
