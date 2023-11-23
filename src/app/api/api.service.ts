@@ -58,6 +58,15 @@ export class ApiService {
       })
     );
   }
+
+  getUserId(email: string): Observable<number> {
+    return this.http.get<any[]>(`${this.apiUrl}/users`).pipe(
+      map((users: any[]) => {
+        const user = users.find(user => user.email === email);
+        return user ? user.id : null;
+      })
+    );
+  }
 }  
         
   

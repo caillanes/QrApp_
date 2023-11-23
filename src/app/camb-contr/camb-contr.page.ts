@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { ApiService } from '../api/api.service';
 
 @Component({
   selector: 'app-camb-contr',
@@ -10,22 +11,38 @@ import { AlertController } from '@ionic/angular';
 export class CambContrPage {
   email: string = '';
 
-  constructor(private router: Router, public alertController: AlertController) {}
+  constructor(
+    private router: Router, 
+    public alertController: AlertController,
+    private apiService: ApiService // Inyecta el ApiService
+  ) {}
 
   enviar() {
-    console.log('Correo ingresado: ', this.email); // Agregar esta línea para depurar
-    if (this.email) {
-      // Verifica si el campo de correo no está vacío
-      // Si no está vacío, redirige a la página de inicio
-      this.router.navigate(['/home']);
+    console.log('Correo ingresado: ', this.email);
+    if (this.isEmailValid(this.email)) {
+      // Obtén el ID de usuario a partir del correo electrónico
+      this.apiService.getUserId(this.email).subscribe((userId: number) => {
+        if (userId !== null) {
+          // Usa el ID de usuario para obtener la contraseña
+          this.apiService.getPassWord(userId).subscribe(
+            (response: any) => {
+              console.log(response);
+              this.router.navigate(['/home']);
+            },
+            (error: any) => {
+              console.log(error);
+              this.mostrarAlerta('Ha ocurrido un error al intentar resetear la contraseña.');
+            }
+          );
+        } else {
+          this.mostrarAlerta('No se encontró un usuario con ese correo electrónico.');
+        }
+      });
     } else {
-      // Si el campo de correo está vacío, muestra una alerta de error
-      this.mostrarAlerta('Por favor, ingrese un correo.');
+      this.mostrarAlerta('Por favor, ingrese un correo válido.');
     }
   }
-  
-  
-  
+
   async mostrarAlerta(mensaje: string) {
     const alert = await this.alertController.create({
       header: 'Error',
