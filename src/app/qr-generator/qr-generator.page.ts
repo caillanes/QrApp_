@@ -2,6 +2,10 @@ import { Component, OnInit, ViewChildren, ElementRef } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { QueryList } from '@angular/core';
 import { Animation, AnimationController, IonCard } from '@ionic/angular';
+import * as QRCode from 'qrcode';
+import { MatDialog } from '@angular/material/dialog';
+import { QrImageDialogComponent } from '../qr-image-dialog/qr-image-dialog.component';
+
 
 @Component({
   selector: 'app-qr-generator',
@@ -14,8 +18,10 @@ export class QrGeneratorPage implements OnInit {
   private animation!: Animation;
 
   menuType: string = 'overlay';
+  qrData = '';
+  isQRExpanded = false;
   
-  constructor(private animationCtrl: AnimationController, private menu: MenuController) { }
+  constructor(public dialog: MatDialog, private animationCtrl: AnimationController, private menu: MenuController) { }
 
   ngAfterViewInit() {
     if (this.cardElements && this.cardElements.length > 0) {
@@ -41,9 +47,54 @@ export class QrGeneratorPage implements OnInit {
     }
   }
 
+  generarQR() {
+    const newValue = this.generateNewQRValue();
+    QRCode.toDataURL(newValue, (err, url) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+  
+      console.log(url); 
+      this.qrData = url;
+    });
+  }
+
+  generateNewQRValue() {
+    return Math.random().toString(36).substring(2);
+  }
+
   play() {
     this.animation.play();
   }
+
+  playAndGenerateQR() {
+    this.play();
+    this.generarQR();
+  }
+
+  toggleQRSize() {
+    this.isQRExpanded = !this.isQRExpanded;
+  }
+
+expandImage() {
+  console.log(this.qrData); 
+  const dialogRef = this.dialog.open(QrImageDialogComponent, {
+    data: { qrData: this.qrData },
+    width: '80vw',
+    height: '80vh', 
+    minWidth: '300px',  
+    minHeight: '300px', 
+  });
+
+  dialogRef.afterOpened().subscribe(() => {
+    console.log('Dialog opened'); 
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('Dialog closed'); 
+  });
+}
   
   openFirst() {
     this.menu.enable(true, 'first');

@@ -10,13 +10,16 @@ import { QrGeneratorPageRoutingModule } from './qr-generator-routing.module';
 
 import { QrGeneratorPage } from './qr-generator.page';
 
+import { QRCodeModule } from 'angularx-qrcode';
+
 @NgModule({
   imports: [
     MatButtonModule,
     CommonModule,
     FormsModule,
     IonicModule,
-    QrGeneratorPageRoutingModule
+    QrGeneratorPageRoutingModule,
+    QRCodeModule
   ],
   declarations: [QrGeneratorPage]
 })

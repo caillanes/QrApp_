@@ -13,14 +13,17 @@
   <div style="padding-top: 45px;">
     <ion-card class="centered-card">
       <ion-card-content>
-        <ion-img src="assets/frame.png" alt="Logo de la aplicación" class="logo"></ion-img>
+        <div *ngIf="qrData">
+          <img [src]="qrData" (click)="expandImage()">
+        </div>
       </ion-card-content>
     </ion-card>
   </div>
   
   
   <div id="botonesLogin">
-    <button mat-raised-button style="background-color: #ffc845; color: white;" (click)="play()">Generar Lista no disponible</button>
+    <button mat-raised-button style="background-color: #ffc845; color: white;" 
+    (click)="playAndGenerateQR()">Generar Lista no disponible</button>
   </div>
 
   <!--
