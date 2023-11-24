@@ -16,10 +16,11 @@ import { QrImageDialogComponent } from './qr-image-dialog/qr-image-dialog.compon
 import { MatIconModule } from '@angular/material/icon';
 
 
+
 @NgModule({
   declarations: [AppComponent, QrImageDialogComponent],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule, MatDialogModule, MatIconModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [ { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
