@@ -9,10 +9,9 @@
 
 * [Carpeta del archivo] (https://n9.cl/registrapp) - Apk bla bla bla 🤑
 * [Repo fake api] (https://github.com/caillanes/fakeApi) - fake api en vercel
-<br/>
-<br/>
-<br/>
+
 
 ## <!-- hola -->
+
 <br/>
 ![penguin-penguin-clean](https://github.com/caillanes/QrApp_/assets/107156396/d3fe0090-0a78-429f-80fe-3e687bbc5e86)
