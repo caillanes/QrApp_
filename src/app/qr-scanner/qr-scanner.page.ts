@@ -34,7 +34,7 @@ export class QrScannerPage implements OnInit {
       }
     } catch (error) {
       console.error('Error scanning', error);
-      // Mostrar un mensaje al usuario explicando que la cámara es necesaria para escanear códigos QR
+      // Mostrar un mensaje explicando que la camara es necesaria para escanear codigos QR
     }
   }
 }

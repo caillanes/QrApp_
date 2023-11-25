@@ -7,6 +7,6 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class QrImageDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-    console.log(data);  // Añade esta línea
+    console.log(data); 
   }
 }
