@@ -9,7 +9,7 @@
 
 * [Carpeta del archivo] (https://n9.cl/registrapp) - Apk bla bla bla 🤑
 * [Repo fake api] (https://github.com/caillanes/fakeApi) - fake api en vercel
-
+<br/>
 
 ## <!-- hola -->
 
