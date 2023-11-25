@@ -5,7 +5,7 @@
 
 <br/>
 
-## Link de descarga ⬇️⬇️
+## Link de descarga (y otros) ⬇️⬇️
 <br/>
 
 * [Carpeta del archivo] (https://n9.cl/registrapp) - Apk bla bla bla 🤑
