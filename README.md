@@ -11,5 +11,5 @@
 * [Repo fake api] (https://github.com/caillanes/fakeApi) - fake api en vercel
 
 <div>
-  ![Pinguino limpiando] (https://media.tenor.com/DlICV9zIlbAAAAAi/penguin-penguin-clean.gif)
+  ![Pinguino limpiando](https://media.tenor.com/DlICV9zIlbAAAAAi/penguin-penguin-clean.gif)
 </div>
