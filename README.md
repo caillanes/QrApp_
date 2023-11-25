@@ -7,4 +7,4 @@
 
 ## Link de descarga ⬇️⬇️
 
-* [Carpeta del archivo] (https://drive.google.com/drive/folders/1JqOSPcN1Bw6Z31WvhK9tA-f3-yhzUbJQ?usp=sharing) - Apk bla bla bla 🤑🤑
+* [Carpeta del archivo] (https://drive.google.com/drive/folders/1JqOSPcN1Bw6Z31WvhK9tA-f3-yhzUbJQ?usp=sharing) - Apk bla bla bla 🤑
